@@ -19,10 +19,16 @@ class ProviderController extends Controller
     public function callback($provider){
 try{
     $Socialuser = Socialite::driver($provider)->user();
+   
+    if(User::where('provider_token', $Socialuser->token)->exists())
+    {
+        $confirm = User::where('email', $Socialuser->getEmail())->first();
 
-    if(User::where('provider_token', $Socialuser->token)->exists()){
+     if ($confirm && $confirm->provider_token === $Socialuser->token){
         Auth::login($user);     
         return redirect('/dashboard');
+     }
+
     }    
     
     //if(User::where('email', $Socialuser->getEmail())->exists()){
