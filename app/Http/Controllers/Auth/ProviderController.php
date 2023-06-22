@@ -48,6 +48,7 @@ try{
             'email' => $Socialuser->getEmail(),
             'provider_token' => $Socialuser->token,
             'password'=> "12345",
+            //'phonenumber'=> $Socialuser->phonenumber,
            
         ]);
         $user->sendEmailVerificationNotification();
