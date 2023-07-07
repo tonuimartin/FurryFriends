@@ -22,6 +22,14 @@ Route::get('/', function () {
     return view('homepage');
 });
 
+Route::get('/user_dashboard', function () {
+    return view('userdashboard');
+});
+
+Route::get('/navbar', function () {
+    return view('layouts\navbar');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
