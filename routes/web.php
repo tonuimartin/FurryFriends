@@ -19,11 +19,11 @@ use Laravel\Socialite\Facades\Socialite;
 
 
 Route::get('/', function () {
-    return view('homepage');
+    return view('landingpage');
 });
 
-Route::get('/user_dashboard', function () {
-    return view('userdashboard');
+Route::get('/source_dashboard', function () {
+    return view('source\sourcedashboard');
 });
 
 Route::get('/navbar', function () {

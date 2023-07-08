@@ -1,4 +1,4 @@
- <!doctype html>
+<!doctype html>
  <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -72,20 +72,20 @@
                 <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
                   <li><a href="#home-section" class="nav-link">Home</a></li>
                  
-                  <li><a href="#why-us-section" class="nav-link">Pet Information</a></li>
+                  <li><a href="#why-us-section" class="nav-link">Add Pets</a></li>
 
                   
                  
                   <li class="has-children">
-                    <a href="#about-section" class="nav-link">Pets for Adoption</a>
+                    <a href="#about-section" class="nav-link">Display Pets</a>
                     <ul class="dropdown arrow-top">
                     <li><a href="#contact-section" class="nav-link">Dogs</a></li>
                     <li><a href="#contact-section" class="nav-link">Cats</a></li>
 </ul></li>
 
 
+                  <li><a href="#services-section" class="nav-link">Adoption Requests</a></li>
                   <li><a href="#contact-section" class="nav-link">Contact</a></li>
-                  <li><a href="#services-section" class="nav-link">Services</a></li>
                   <li class="has-children">
                     <a href="#about-section" class="nav-link"> <div>{{ Auth::user()->name }}</div></a>
 

@@ -3,7 +3,7 @@
 
 
     <x-slot name="header">
-    @include('layouts.navbar')
+    @include('layouts.sourcenavbar')
     
     </x-slot>
     @include('userpartials.homepagecards')
