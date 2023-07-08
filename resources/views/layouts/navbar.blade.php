@@ -22,40 +22,7 @@
   <body>
 
 
-    <div class="site-mobile-menu site-navbar-target">
-        <div class="site-mobile-menu-header">
-          <div class="site-mobile-menu-close mt-3">
-            <span class="icon-close2 js-menu-toggle"></span>
-          </div>
-        </div>
-        <div class="site-mobile-menu-body"></div>
-      </div>
-
-
-      <div class="top-bar">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <a href="#" class=""><span class="mr-2  icon-envelope-open-o"></span> <span class="d-none d-md-inline-block">info@yourdomain.com</span></a>
-              <span class="mx-md-2 d-inline-block"></span>
-              <a href="#" class=""><span class="mr-2  icon-phone"></span> <span class="d-none d-md-inline-block">1+ (234) 5678 9101</span></a>
-
-
-              <div class="float-right">
-
-                <a href="#" class=""><span class="mr-2  icon-twitter"></span> <span class="d-none d-md-inline-block">Twitter</span></a>
-                <span class="mx-md-2 d-inline-block"></span>
-                <a href="#" class=""><span class="mr-2  icon-facebook"></span> <span class="d-none d-md-inline-block">Facebook</span></a>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-
+    
       <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
 
         <div class="container">
@@ -70,17 +37,17 @@
               <nav class="site-navigation text-right ml-auto " role="navigation">
 
                 <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
-                  <li><a href="#home-section" class="nav-link">Home</a></li>
+                  <li><a href="/dashboard" class="nav-link">Home</a></li>
                  
-                  <li><a href="#why-us-section" class="nav-link">Pet Information</a></li>
+                  <li><a href="/petinformation" class="nav-link">Pet Information</a></li>
 
                   
                  
                   <li class="has-children">
-                    <a href="#about-section" class="nav-link">Pets for Adoption</a>
+                    <a href="/petsadoption" class="nav-link">Pets for Adoption</a>
                     <ul class="dropdown arrow-top">
-                    <li><a href="#contact-section" class="nav-link">Dogs</a></li>
-                    <li><a href="#contact-section" class="nav-link">Cats</a></li>
+                    <li><a href="/dogsadoption" class="nav-link">Dogs</a></li>
+                    <li><a href="/catsadoption" class="nav-link">Cats</a></li>
 </ul></li>
 
 

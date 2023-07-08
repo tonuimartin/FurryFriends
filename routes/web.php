@@ -22,6 +22,22 @@ Route::get('/', function () {
     return view('landingpage');
 });
 
+Route::get('/petinformation', function () {
+    return view('allpetinfo');
+});
+
+Route::get('/petsadoption', function () {
+    return view('allpetsforadoption');
+});
+
+Route::get('/dogsadoption', function () {
+    return view('dogsforadoption');
+});
+
+Route::get('/catsadoption', function () {
+    return view('catsforadoption');
+});
+
 Route::get('/source_dashboard', function () {
     return view('source\sourcedashboard');
 });
