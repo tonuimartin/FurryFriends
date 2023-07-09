@@ -39,7 +39,7 @@
                 <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
                   <li><a href="#home-section" class="nav-link">Home</a></li>
                  
-                  <li><a href="#why-us-section" class="nav-link">Add Pets</a></li>
+                  <li><a href="/addpets" class="nav-link">Add Pets</a></li>
 
                   
                  

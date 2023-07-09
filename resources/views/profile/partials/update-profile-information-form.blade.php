@@ -23,7 +23,18 @@
             <x-input-error class="mt-2" :messages="$errors->get('name')" />
         </div>
 
-        
+        <div>
+            <x-input-label for="phone_number" :value="__('Phone Number')" />
+            <x-text-input id="phone_number" class="block mt-1 w-full" type="tel" name="phone_number" :value="old('phone_number',$user->phone_number)" required autofocus autocomplete="phonenumber" />
+            <x-input-error :messages="$errors->get('phone_number')" class="mt-2" />
+        </div>
+
+        <script>
+            const phoneInputField = document.querySelector("#phone_number");
+            const phoneInput = window.intlTelInput(phoneInputField, {
+                utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+            });
+        </script>      
 
         <div>
             <x-input-label for="email" :value="__('Email')" />

@@ -11,8 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pet', function (Blueprint $table) {
-            $table->id();
+        Schema::create('pets', function (Blueprint $table) {
+            $table->id('pet_id');
+            $table->string('pet_name');
+            $table->string('age');
+            $table->string('pet_gender');
+            $table->string('breed');
+            $table->string('pet_type');
+            $table->foreignId('source_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('description');
+            $table->string('pet_image');
             $table->timestamps();
         });
     }
