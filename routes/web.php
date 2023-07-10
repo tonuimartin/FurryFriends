@@ -43,6 +43,15 @@ Route::get('/source_dashboard', function () {
     return view('source\sourcedashboard');
 });
 
+//edit property
+Route::get('/pet/{pet}/edit', [PetController::class, 'edit'])->middleware('auth');
+
+//update property
+Route::put('/pet/{pet}/update',[PetController::class, 'update'])->middleware('auth');
+
+//delete property
+Route::delete('/pet/{pet}/delete',[PetController::class, 'delete'])->middleware('auth');
+
 Route::get('/navbar', function () {
     return view('layouts\navbar');
 });
@@ -53,6 +62,10 @@ Route::get('/dashboard', function () {
 
 Route::get('/addpets', [PetController::class, 'create'])->middleware('auth');
 Route::post('/addedpet', [PetController::class, 'store'])->middleware('auth');
+
+Route::get('/displaypets', [PetController::class, 'show'])->middleware('auth');
+Route::get('/displaydogs', [PetController::class, 'showdogs'])->middleware('auth');
+Route::get('/displaycats', [PetController::class, 'showcats'])->middleware('auth');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

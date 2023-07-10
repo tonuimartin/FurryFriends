@@ -4,6 +4,7 @@
     @include('layouts.sourcenavbar')
     
     </x-slot>
-    @include('userpartials.homepagecards')
+    
+    @include('userpartials.displaycards')
     
 </x-app-layout>

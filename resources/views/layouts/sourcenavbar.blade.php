@@ -37,17 +37,17 @@
               <nav class="site-navigation text-right ml-auto " role="navigation">
 
                 <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
-                  <li><a href="#home-section" class="nav-link">Home</a></li>
+                  <li><a href="/source_dashboard" class="nav-link">Home</a></li>
                  
                   <li><a href="/addpets" class="nav-link">Add Pets</a></li>
 
                   
                  
                   <li class="has-children">
-                    <a href="#about-section" class="nav-link">Display Pets</a>
+                    <a href="/displaypets" class="nav-link">Display My Pets</a>
                     <ul class="dropdown arrow-top">
-                    <li><a href="#contact-section" class="nav-link">Dogs</a></li>
-                    <li><a href="#contact-section" class="nav-link">Cats</a></li>
+                    <li><a href="/displaydogs" class="nav-link">Dogs</a></li>
+                    <li><a href="/displaycats" class="nav-link">Cats</a></li>
 </ul></li>
 
 
@@ -98,7 +98,7 @@
              </div>
 
         </header>
-
+        @include('layouts.message')
     <!-- <div class="hero" style="background-image: url({{asset('imports/nav_bar/assets/images/hero_1.jpg')}});"></div> -->
   
 

@@ -47,4 +47,9 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+     //relationship with pets
+     public function pets() {
+        return $this->hasMany(Pet::class, 'source_id');
+    }
 }

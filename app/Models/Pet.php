@@ -10,6 +10,8 @@ class Pet extends Model
 {
     use HasFactory;
     
+    protected $primaryKey = 'pet_id';
+    
     protected $fillable = [
         
         'pet_name',
@@ -21,6 +23,17 @@ class Pet extends Model
         'description',
         'pet_image'
     ];
+
+    public function scopeFilter($query, array $filters)
+    {
+
+        if ($filters['search'] ?? false) {
+            $query->where('pet_name', 'like', '%' . request('search') . '%')
+                ->orWhere('age', 'like', '%' . request('search') . '%')
+                ->orWhere('breed', 'like', '%' . request('search') . '%')
+                ->orWhere('pet_gender', 'like', '%' . request('search') . '%');
+        }
+    }
 
     public function owner()
     {
