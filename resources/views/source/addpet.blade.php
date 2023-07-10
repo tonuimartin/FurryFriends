@@ -52,10 +52,19 @@
 						<span class="focus-input100"></span>
 					</div>
 
-                    <div class="wrap-input100 validate-input m-b-26" data-validate="Pet Gender is required">
-						<span class="label-input100">Pet Gender</span>
-						<input class="input100" type="text" name="pet_gender" placeholder="Enter Pet Gender" value="{{ old('pet_gender') }}">
-						<span class="focus-input100"></span>
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Pet Gender is required">
+                        
+						<label for="pet_type" class="label-input100">Pet Gender</label>
+                        <select class="border border-gray-200 rounded p-2 w-full input100" name="pet_gender"
+                    value="{{ old('pet_gender') }}">
+                    <option value="">-select-</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                   
+                </select>
+
+						<!-- <input class="input100" type="text" name="pet_type" placeholder="Enter Pet Type">
+						<span class="focus-input100"></span> -->
 					</div>
 
                     <div class="wrap-input100 validate-input m-b-26" data-validate="Pet Breed is required">

@@ -71,12 +71,12 @@ class PetController extends Controller
     }
 
        //show edit form
-       public function edit(Pet $pet)
+       public function petedit(Pet $pet)
        {
-           return view('source.pet_edit', ['pets' => $pet]);
+           return view('source.pet_edit', ['pet' => $pet]);
        }
        // update property data
-       public function update(Request $request, Pet $pet)
+       public function petupdate(Request $request, Pet $pet)
        {
         $data = $request->validate([            
             'pet_name' => 'required',
@@ -85,6 +85,7 @@ class PetController extends Controller
             'breed' => 'required',
             'pet_type' => 'required',
             'description' => 'required',
+            
             
     
             ]);
@@ -98,7 +99,7 @@ class PetController extends Controller
    
            $pet->update($data);
    
-           return redirect('/displaypets')->with('message', 'Property updated successfully');
+           return redirect('/displaypets')->with('message', 'Pet updated successfully');
        }
        //delete property
        public function delete($pet_id)

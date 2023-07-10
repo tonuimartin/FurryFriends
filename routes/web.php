@@ -44,10 +44,10 @@ Route::get('/source_dashboard', function () {
 });
 
 //edit property
-Route::get('/pet/{pet}/edit', [PetController::class, 'edit'])->middleware('auth');
+Route::get('/pet/{pet}/edit', [PetController::class, 'petedit'])->middleware('auth');
 
 //update property
-Route::put('/pet/{pet}/update',[PetController::class, 'update'])->middleware('auth');
+Route::put('/pet/{pet}/update',[PetController::class, 'petupdate'])->middleware('auth');
 
 //delete property
 Route::delete('/pet/{pet}/delete',[PetController::class, 'delete'])->middleware('auth');

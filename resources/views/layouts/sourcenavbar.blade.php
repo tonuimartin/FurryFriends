@@ -102,7 +102,7 @@
     <!-- <div class="hero" style="background-image: url({{asset('imports/nav_bar/assets/images/hero_1.jpg')}});"></div> -->
   
 
-
+    <script src="{{ asset('js/app.js') }}"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

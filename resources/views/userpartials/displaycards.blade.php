@@ -24,7 +24,7 @@
           <p> {{ $pet->gender }}</p>
           <p> {{ $pet->breed }}</p>
           <p> {{ $pet->description }}</p>
-          <a href="#" class="btn btn-primary btn-sm">Edit</a>
+          <a href="/pet/{{ $pet->pet_id }}/edit" class="btn btn-primary btn-sm">Edit</a>
           <form method="POST" action="/pet/{{ $pet->pet_id }}/delete">
                 @csrf
                 @method('DELETE')
