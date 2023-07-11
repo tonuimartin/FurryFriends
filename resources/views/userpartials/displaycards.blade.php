@@ -9,7 +9,7 @@
 
 </head>
 <!------ Include the above in your HEAD tag ---------->
-
+<h2 style="color:black" class="h1 text-center" id="pageHeaderTitle">These are your Pets</h2>
 
 @foreach ($pets as $pet)
 <div class="container" >
