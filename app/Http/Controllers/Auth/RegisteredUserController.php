@@ -42,12 +42,22 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'phone_number' => $request->phone_number,
+            'role'=> 'user',
         ]);
 
         event(new Registered($user));
 
         Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        $role = auth()->user()->role;
+
+        if($role == "source"){
+            return redirect(RouteServiceProvider::SOURCE)->with('message','Account created and logged in successfully!');
+            }
+            else{
+            return redirect(RouteServiceProvider::HOME)->with('message','Account created and logged in successfully!');
+            }
+
+        
     }
 }

@@ -46,8 +46,7 @@
                   <li class="has-children">
                     <a href="/petsadoption" class="nav-link">Pets for Adoption</a>
                     <ul class="dropdown arrow-top">
-                    <li><a href="/dogsadoption" class="nav-link">Dogs</a></li>
-                    <li><a href="/catsadoption" class="nav-link">Cats</a></li>
+                    
 </ul></li>
 
 
@@ -109,4 +108,5 @@
     <script src="js/jquery.sticky.js"></script>
     <script src="js/main.js"></script>
   </body>
+  
 </html>

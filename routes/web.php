@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\ProviderController;
 use App\Http\Controllers\PetController;
+use App\Http\Controllers\FilterController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -27,9 +28,6 @@ Route::get('/petinformation', function () {
     return view('allpetinfo');
 });
 
-Route::get('/petsadoption', function () {
-    return view('allpetsforadoption');
-});
 
 Route::get('/dogsadoption', function () {
     return view('dogsforadoption');
@@ -62,6 +60,8 @@ Route::get('/dashboard', function () {
 
 Route::get('/addpets', [PetController::class, 'create'])->middleware('auth');
 Route::post('/addedpet', [PetController::class, 'store'])->middleware('auth');
+
+Route::get('/petsadoption', [FilterController::class, 'index']);
 
 Route::get('/displaypets', [PetController::class, 'show'])->middleware('auth');
 Route::get('/displaydogs', [PetController::class, 'showdogs'])->middleware('auth');
