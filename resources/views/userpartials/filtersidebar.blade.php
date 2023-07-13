@@ -92,7 +92,7 @@
 
           
           <button class="btn btn-block btn-primary" style="border: 1px solid black;">
->Enter</button>
+Enter</button>
         </div>
       </form>
     </aside>

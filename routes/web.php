@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\ProviderController;
 use App\Http\Controllers\PetController;
 use App\Http\Controllers\FilterController;
+use App\Http\Controllers\Auth\RegisterSourceController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -41,6 +42,10 @@ Route::get('/source_dashboard', function () {
     return view('source\sourcedashboard');
 });
 
+Route::get('/registersource', [RegisterSourceController::class, 'create'])->name('registersource');
+
+Route::post('/addedsource', [RegisterSourceController::class, 'stores']);
+
 //edit property
 Route::get('/pet/{pet}/edit', [PetController::class, 'petedit'])->middleware('auth');
 
@@ -53,6 +58,24 @@ Route::delete('/pet/{pet}/delete',[PetController::class, 'delete'])->middleware(
 Route::get('/navbar', function () {
     return view('layouts\navbar');
 });
+
+Route::get('/displaycards2', function () {
+    return view('userpartials\displaycards2');
+});
+
+Route::get('/admindashboard', function () {
+    return view('admin\admindashboard');
+});
+
+// Route::get('/basictable', function () {
+//     return view('admin\basictable');
+// });
+
+Route::get('/basictable', [RegisterSourceController::class, 'show']);
+
+Route::get('/source/{sourceapplicant}/accept',[RegisterSourceController::class,'store']);
+
+Route::delete('/source/{sourceapplicant}/deny',[RegisterSourceController::class,'deny']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

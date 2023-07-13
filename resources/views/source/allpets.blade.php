@@ -5,6 +5,6 @@
     
     </x-slot>
     
-    @include('userpartials.displaycards')
+    @include('userpartials.displaycards2')
     
 </x-app-layout>

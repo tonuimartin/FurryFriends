@@ -15,7 +15,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-
+   
         
     </head>
     <body class="font-sans antialiased bg-gray-100 dark:bg-gray-900">

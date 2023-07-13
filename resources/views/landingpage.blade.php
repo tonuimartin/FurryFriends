@@ -41,6 +41,7 @@
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
+  @include('layouts.message')
     <div class="container d-flex align-items-center">
 
       <h1 class="logo me-auto"><a href="index.html">Furry Friends</a></h1>
@@ -70,9 +71,6 @@
           </li>
           <li><a href="services.html">Services</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="blog.html">Blog</a></li>
-
           <li><a href="contact.html">Contact</a></li>
           
           <li>  @if (Route::has('login'))
@@ -85,6 +83,10 @@
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}" class="getstarted">Register</a>
                         @endif
+
+                        @if (Route::has('registersource'))
+                            <a href="/registersource" class="getstarted">Register as Source</a>
+                        @endif
                     @endauth
                 
             @endif
@@ -93,10 +95,11 @@
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-
+      
     </div>
   </header><!-- End Header -->
 
+  
   <!-- ======= Hero Section ======= -->
   <section id="hero">
     <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">

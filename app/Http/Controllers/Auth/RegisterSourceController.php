@@ -26,7 +26,7 @@ class RegisterSourceController extends Controller
         // }
 
         $sourceapplicants= Sourceapplicant::all();
-         return view('admin.sourceapplicants',compact('sourceapplicants'));
+         return view('admin.basictable',compact('sourceapplicants'));
     }
     
     public function deny($sourceapplicant){
