@@ -2,7 +2,7 @@
 
 # FurryFriends
 
-FurryFriends is a web application that connects pet lovers with adoptable pets in need of a loving home. Users can browse and search for available pets, view pet details, and contact the pet owners or adoption agencies for further information. The application aims to facilitate the pet adoption process and promote responsible pet ownership.
+FurryFriends is a web application that connects pet lovers with adoptable pets in need of a loving home. Users can browse and search for available pets, view pet details, and contact pet owners or adoption agencies for further information. The application aims to facilitate pet adoption and promote responsible pet ownership.
 
 ## Features
 
@@ -15,10 +15,10 @@ FurryFriends is a web application that connects pet lovers with adoptable pets i
 
 ## Technologies Used
 
-- Laravel : PHP framework for building web applications.
-- MySQL : Relational database management system for storing and retrieving data.
+- Laravel: PHP framework for building web applications.
+- MySQL: Relational database management system for storing and retrieving data.
 - HTML, CSS, JavaScript: Front-end technologies for building the user interface and adding interactivity.
-- Bootstrap : CSS framework for responsive and mobile-first web development.
+- Bootstrap: CSS framework for responsive and mobile-first web development.
 - Other dependencies or libraries (if applicable)
 
 ## Installation
@@ -26,12 +26,16 @@ FurryFriends is a web application that connects pet lovers with adoptable pets i
 1. Clone the repository: `git clone https://github.com/your-username/FurryFriends.git`
 2. Install the project dependencies: `composer install`
 3. Create a copy of the `.env.example` file and rename it to `.env`.
-4. Generate an application key: `php artisan key:generate`
-5. Configure the database connection in the `.env` file with your database credentials.
-6. Run the database migrations: `php artisan migrate`
-7. Start the development server: `php artisan serve`
+4. Generate an application key:
+ ```
+  php artisan key:generate
 
-Make sure to set up a database and update the `.env` file with your database credentials before running the migrations.
+ ```
+6. Configure the database connection in the `.env` file with your database credentials.
+7. Run the database migrations: `php artisan migrate`
+8. Start the development server: `php artisan serve`
+
+Set up a database and update the `.env` file with your credentials before running the migrations.
 
 ## Usage
 
@@ -43,7 +47,7 @@ Make sure to set up a database and update the `.env` file with your database cre
 
 ## Contributing
 
-Contributions to the FurryFriends project are welcome! If you find any bugs, issues, or have suggestions for improvements, please open an issue or submit a pull request. Make sure to follow the existing coding style and conventions.
+Contributions to the FurryFriends project are welcome! If you find any bugs, issues, or suggestions for improvements, please open an issue or submit a pull request. Make sure to follow the existing coding style and conventions.
 
 ## License
 
