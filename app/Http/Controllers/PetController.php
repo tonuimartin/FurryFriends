@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Pet;
+use App\Models\PetInformation;
 use App\Models\Confirmation;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\DB;
@@ -21,6 +22,26 @@ class PetController extends Controller
     }
 
     //store pet information
+    public function addpetinformation(Request $request)
+    {
+        $data = $request->validate([            
+        'title' => 'required',
+        'info_description' => 'required',
+        ]);
+
+        if ($request->hasFile('pet_information_image')) {
+        $data['pet_information_image'] = $request->file('pet_information_image')->store('Petinformation', 'public');
+        }       
+
+        Petinformation::create($data);
+
+        return redirect('/petinformationform')->with('message', 'Pet Information added successfully');
+    }
+
+    public function petinformationform(){
+        return view('admin.addpetinformation');
+    }
+
     public function store(Request $request)
     {
         $data = $request->validate([            
@@ -54,6 +75,26 @@ class PetController extends Controller
         ->with('pets', $pets);
     }
 
+    public function viewpetinformation()
+    {
+        // if (auth()->user()->role != "owner") {
+        //     abort(403, 'Unauthorized Action! This page is for property owners only');
+        // }
+
+        $petinformations= Petinformation::all();
+         return view('admin.viewpetinformation',compact('petinformations'));
+    }
+
+    public function petinformation()
+    {
+        if (auth()->user()->role != "user") {
+           abort(403, 'Unauthorized Action! This page is for users only');
+        }
+
+        $petinformations= Petinformation::all();
+         return view('allpetinfo',compact('petinformations'));
+    }
+
     public function showdogs()
     {
         $pets = Pet::filter(request(['search']))->where('source_id', auth()->id())->where('pet_type','dog')->get();
@@ -75,7 +116,7 @@ class PetController extends Controller
        {
            return view('source.pet_edit', ['pet' => $pet]);
        }
-       // update property data
+       
        public function petupdate(Request $request, Pet $pet)
        {
         $data = $request->validate([            

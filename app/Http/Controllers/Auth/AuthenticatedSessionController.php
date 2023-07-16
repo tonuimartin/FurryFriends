@@ -52,4 +52,22 @@ class AuthenticatedSessionController extends Controller
 
         return redirect('/');
     }
+
+    public function dashboard(){
+    if (auth()->user()->role != "user") {
+        abort(403, 'Unauthorized Action! This page is for users only');
+     }
+
+    
+      return view('dashboard');
+ }
+
+ public function source_dashboard(){
+    if (auth()->user()->role != "source") {
+        abort(403, 'Unauthorized Action! This page is for pet sources only');
+     }
+
+    
+      return view('source.sourcedashboard');
+ }
 }

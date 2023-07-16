@@ -10,7 +10,11 @@ use App\Models\Pet;
 class FilterController extends Controller
 {
     public function index(Request $request){
-        // dd($request->all());
+
+        if (auth()->user()->role != "user") {
+            abort(403, 'Unauthorized Action! This page is for users only');
+         }
+        
         $pets=Pet::all();
         $query= Pet::query();
 

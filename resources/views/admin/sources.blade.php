@@ -88,11 +88,11 @@
                           {{ $sourceapplicant->source_description}}
                           </td>
                           <td>
-                 <img class="d-block w-100" src="{{ $sourceapplicant->source_image ? asset('storage/' . $sourceapplicant->source_image) : asset('images/no-image.jpg') }}"alt="Source Image" class="img-fluid img-thumbnail" >
+                 <img class="d-block w-100" src="{{ $sourceapplicant->source_image ? asset('storage/' . $sourceapplicant->source_image) : asset('images/no-image.jpg') }}"alt="Source Image" class="img-fluid img-thumbnail" style="height: 200px" >
 			      <!-- <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/sheep-3.jpg"  alt="Sheep"> -->
 		      </td>
               <td>
-                 <img class="d-block w-100" src="{{ $sourceapplicant->source_certification ? asset('storage/' . $sourceapplicant->source_certification) : asset('images/no-image.jpg') }}"alt="Source Certification" class="img-fluid img-thumbnail" >
+                 <img class="d-block w-100" src="{{ $sourceapplicant->source_certification ? asset('storage/' . $sourceapplicant->source_certification) : asset('images/no-image.jpg') }}"alt="Source Certification" class="img-fluid img-thumbnail" style="height: 200px" >
 			      <!-- <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/sheep-3.jpg"  alt="Sheep"> -->
 		      </td> 
                      <td>

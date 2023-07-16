@@ -26,7 +26,17 @@ class RegisterSourceController extends Controller
         // }
 
         $sourceapplicants= Sourceapplicant::all();
-         return view('admin.basictable',compact('sourceapplicants'));
+         return view('admin.sources',compact('sourceapplicants'));
+    }
+
+    public function shown()
+    {
+        // if (auth()->user()->role != "owner") {
+        //     abort(403, 'Unauthorized Action! This page is for property owners only');
+        // }
+
+        $sourceapplicants= Source::all();
+         return view('admin.approvedsourceapplicants',compact('sourceapplicants'));
     }
     
     public function deny($sourceapplicant){
@@ -36,6 +46,15 @@ class RegisterSourceController extends Controller
         return redirect('/adminsourceapplicants')->with('message', 'Applicant deleted successfully');
 
     }
+
+    public function delete($source){
+
+        $del = Source::where('id', $source)->first();
+        $del->delete();
+        return redirect('/approvedpetsources')->with('message', 'Pet Source Deleted Successfully');
+
+    }
+
         
     public function stores(Request $request)
     {

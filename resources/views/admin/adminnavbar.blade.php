@@ -126,12 +126,15 @@
             <li class="nav-item nav-profile dropdown">
               <a class="nav-link dropdown-toggle  pl-0 pr-0" href="#" data-toggle="dropdown" id="profileDropdown">
                 <i class="typcn typcn-user-outline mr-0"></i>
-                <span class="nav-profile-name">Evan Morales</span>
+                <span class="nav-profile-name"> {{ Auth::user()->name }}</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
                 <a class="dropdown-item">
-                <i class="typcn typcn-cog text-primary"></i>
-                Settings
+                <x-responsive-nav-link class="nav-link"
+                         :href="route('profile.edit')">
+                            {{ __('Profile') }}                      
+                    </x-responsive-nav-link>
+                
                 </a>
                 <a class="dropdown-item">
                 <i class="typcn typcn-power text-primary"></i>
@@ -211,17 +214,16 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="/addpetinformation" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <i class="typcn typcn-briefcase menu-icon"></i>
-              <span class="menu-title">Add Pet Information</span>
+              <span class="menu-title">Pet Information</span>
               <i class="typcn typcn-chevron-right menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Buttons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/dropdowns.html">Dropdowns</a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Typography</a></li>
-              </ul>
+                <li class="nav-item"> <a class="nav-link" href="/petinformationform">Add Pet Information</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/viewpetinformation">View Pet Information</a></li>
+                
             </div>
           </li>
           <li class="nav-item">
@@ -261,7 +263,7 @@
             </div>
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/basictable">Approved Pet Sources</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/approvedpetsources">Approved Pet Sources</a></li>
               </ul>
             </div>
           </li>

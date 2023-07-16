@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\ProviderController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\PetController;
 use App\Http\Controllers\FilterController;
 use App\Http\Controllers\Auth\RegisterSourceController;
@@ -25,9 +26,9 @@ Route::get('/', function () {
     return view('landingpage');
 });
 
-Route::get('/petinformation', function () {
-    return view('allpetinfo');
-});
+Route::get('/petinformation',[Petcontroller::class, 'petinformation'])->middleware('auth');
+    
+
 
 
 Route::get('/dogsadoption', function () {
@@ -38,9 +39,8 @@ Route::get('/catsadoption', function () {
     return view('catsforadoption');
 });
 
-Route::get('/source_dashboard', function () {
-    return view('source\sourcedashboard');
-});
+Route::get('/source_dashboard', [AuthenticatedSessionController::class, 'source_dashboard'])->middleware('auth');
+
 
 Route::get('/registersource', [RegisterSourceController::class, 'create'])->name('registersource');
 
@@ -73,18 +73,24 @@ Route::get('/admindashboard', function () {
 
 Route::get('/basictable', [RegisterSourceController::class, 'show']);
 
+Route::get('/approvedpetsources', [RegisterSourceController::class, 'shown']);
+
 Route::get('/source/{sourceapplicant}/accept',[RegisterSourceController::class,'store']);
 
 Route::delete('/source/{sourceapplicant}/deny',[RegisterSourceController::class,'deny']);
+
+Route::delete('/source/{source}/delete',[RegisterSourceController::class,'delete']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/dashboard', [AuthenticatedSessionController::class, 'dashboard'])->middleware('auth');
+
 Route::get('/addpets', [PetController::class, 'create'])->middleware('auth');
 Route::post('/addedpet', [PetController::class, 'store'])->middleware('auth');
 
-Route::get('/petsadoption', [FilterController::class, 'index']);
+Route::get('/petsadoption', [FilterController::class, 'index'])->middleware('auth');
 
 Route::get('/displaypets', [PetController::class, 'show'])->middleware('auth');
 Route::get('/displaydogs', [PetController::class, 'showdogs'])->middleware('auth');
@@ -92,9 +98,16 @@ Route::get('/displaycats', [PetController::class, 'showcats'])->middleware('auth
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+   // Route::get('/profile', [ProfileController::class, 'adminedit'])->name('adminprofile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::post('/addpetinformation',[PetController::class,'addpetinformation']);
+
+Route::get('/petinformationform',[PetController::class,'petinformationform']);
+
+Route::get('/viewpetinformation',[PetController::class,'viewpetinformation']);
 
 Route::get('/auth/{provider}/redirect',[ProviderController::class,'redirect']);
  

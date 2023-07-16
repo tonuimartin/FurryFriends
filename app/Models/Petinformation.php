@@ -11,13 +11,9 @@ class Petinformation extends Model
 
     protected $fillable = [
         
-        'pet_name',
-        'age',
-        'pet_gender',
-        'breed',
-        'pet_type',
-        'source_id',
-        'description',
-        'pet_image'
+        'title',
+        'info_description',
+        'pet_information_image'
+        
     ];
 }

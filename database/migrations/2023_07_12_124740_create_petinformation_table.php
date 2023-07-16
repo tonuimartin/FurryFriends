@@ -11,18 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('petinformation', function (Blueprint $table) {
+        Schema::create('petinformations', function (Blueprint $table) {
             $table->id();
             //$table->foreignId('source_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('title');
-            $table->string('description');           
+            $table->string('info_description');
+            $table->string('pet_information_image');           
             $table->timestamps();
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('petinformation');
+        Schema::dropIfExists('petinformations');
     }
 
 };

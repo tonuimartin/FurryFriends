@@ -2,8 +2,7 @@
 
     <x-slot name="header">
     @include('layouts.navbar') 
-    
-
-    </x-slot>
+       </x-slot>
+       @include('admin.petinformationcards')
         
 </x-app-layout>
