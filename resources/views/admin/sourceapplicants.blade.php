@@ -40,7 +40,11 @@
 			      <!-- <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/sheep-3.jpg"  alt="Sheep"> -->
 		      </td> 
               <td class="w-25">
-              <a href="/source/{{ $sourceapplicant->id }}/accept" class="btn btn-primary btn-sm">Accept</a>
+              
+              <form method="POST" action="/email/{sourceapplicant}/verification-notification">
+            @csrf
+            <a href="/source/{{ $sourceapplicant->id }}/accept" class="btn btn-primary btn-sm">Accept</a>
+        </form>
 </td>
 <td class="w-25">
           <form method="POST" action="/source/{{ $sourceapplicant->id }}/deny">

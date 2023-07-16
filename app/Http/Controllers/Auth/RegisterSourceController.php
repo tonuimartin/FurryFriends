@@ -123,7 +123,7 @@ class RegisterSourceController extends Controller
         
     
         
-    return redirect('/adminsourceapplicants')->with('message', 'Applicant accepted successfully');
+    return redirect('/basictable')->with('message', 'Applicant accepted successfully');
     
         }
     

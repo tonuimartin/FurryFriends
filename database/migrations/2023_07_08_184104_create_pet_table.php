@@ -21,6 +21,7 @@ return new class extends Migration
             $table->foreignId('source_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('description');
             $table->string('pet_image');
+            $table->decimal("price",6,2);
             $table->timestamps();
         });
     }

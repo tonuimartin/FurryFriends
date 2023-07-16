@@ -51,6 +51,7 @@ class PetController extends Controller
         'breed' => 'required',
         'pet_type' => 'required',
         'description' => 'required',
+        'price' => 'required',
         
 
         ]);
@@ -149,5 +150,53 @@ class PetController extends Controller
            $pet->delete();
            return redirect('/source_dashboard')->with('message', 'Pet deleted successfully');
        }
+
+       public function addtocart($pet_id){
+        $pet=Pet::findOrFail($pet_id);
+
+        $cart = session()->get('cart', []);
+ 
+        if(isset($cart[$pet_id])) {
+            $cart[$pet_id]['quantity'];
+        }  else {
+            $cart[$pet_id] = [
+                "pet_name" => $pet->pet_name,
+                "pet_image" => $pet->pet_image,
+                "price" => $pet->price,
+                "quantity" => 1
+            ];
+        }
+ 
+        session()->put('cart', $cart);
+        return redirect()->back()->with('message', 'Pet added to cart successfully!');
+    }
+
+    public function cart()
+    {
+        return view('cart');
+    }
+
+    public function updatecart(Request $request)
+    {
+        if($request->pet_id && $request->quantity){
+            $cart = session()->get('cart');
+            $cart[$request->pet_id]["quantity"] = $request->quantity;
+            session()->put('cart', $cart);
+            session()->flash('message', 'Cart successfully updated!');
+        }
+    }
+ 
+    public function removecart(Request $request)
+    {
+        if($request->id) {
+            $cart = session()->get('cart');
+            if(isset($cart[$request->id])) {
+                unset($cart[$request->id]);
+                session()->put('cart', $cart);
+            }
+            session()->flash('message', 'Pet successfully removed!');
+        }
+    }
+       
 }
 

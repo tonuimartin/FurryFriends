@@ -84,9 +84,14 @@
                    
                 </select>
 
-						<!-- <input class="input100" type="text" name="pet_type" placeholder="Enter Pet Type">
-						<span class="focus-input100"></span> -->
 					</div>
+
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Pet price is required">
+						<span class="label-input100">Pet Price</span>
+						<input class="input100" type="number" name="price" placeholder="Enter Pet Price" value="{{ old('price') }}">
+						<span class="focus-input100"></span>
+					</div>
+
 
                     <div class="wrap-input100 validate-input m-b-26" data-validate="Pet Description is required">
 						<label for="description" class="label-input100">Pet Description</label>

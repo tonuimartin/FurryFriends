@@ -98,6 +98,7 @@ Enter</button>
     </aside>
 
     <div class="col-md-9">
+      @include('layouts.message')
       <div class="row">
         @foreach ($pets as $pet)
           <div class="col-lg-4 col-md-4 mb-4">
@@ -112,10 +113,12 @@ Enter</button>
                       <p>{{ $pet->breed }}</p>
                       <p>{{ $pet->description }}</p>
                     </div>
+                    
                   </div>
                   <div class="col-sm-5">
                     <img class="d-block w-100" src="{{ $pet->pet_image ? asset('storage/' . $pet->pet_image) : asset('images/no-image.jpg') }}" alt="Pet Image" style="height: 230px;">
                   </div>
+                  <a href="{{ url('addtocart',$pet->pet_id) }}" class="btn btn-primary btn-block" role="button"> Add to cart </a>
                 </div>
               </div>
             </div>
