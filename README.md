@@ -23,23 +23,34 @@ FurryFriends is a web application that connects pet lovers with adoptable pets i
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/your-username/FurryFriends.git`
-2. Install the project dependencies: `composer install`
-3. Create a copy of the `.env.example` file and rename it to `.env`.
-4. Generate an application key:
+1. Clone the repository:
+   ```
+   git clone https://github.com/your-username/FurryFriends.git
+   ```
+3. Install the project dependencies:
+   ```
+   composer install
+   ```
+5. Create a copy of the ```.env.example``` file and rename it to ```.env```.
+6. Generate an application key:
  ```
   php artisan key:generate
-
  ```
-6. Configure the database connection in the `.env` file with your database credentials.
-7. Run the database migrations: `php artisan migrate`
-8. Start the development server: `php artisan serve`
+5. Configure the database connection in the ```.env``` file with your database credentials.
+6. Run the database migrations:
+   ```
+   php artisan migrate
+   ```
+7. Start the development server:
+    ```
+   php artisan serve
+    ```
 
-Set up a database and update the `.env` file with your credentials before running the migrations.
+Set up a database and update the ```.env``` file with your credentials before running the migrations.
 
 ## Usage
 
-- Visit the application in your web browser at `http://localhost:8000` (or the specified URL after running `php artisan serve`).
+- Visit the application in your web browser at ```http://localhost:8000``` (or the specified URL after running```php artisan serve```).
 - Register a new user account or log in with an existing account.
 - Browse the available pets, search for specific pets, or filter the results based on your preferences.
 - Click on a pet to view more details and contact the owner or adoption agency.
