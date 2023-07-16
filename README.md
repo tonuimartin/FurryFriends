@@ -33,9 +33,9 @@ FurryFriends is a web application that connects pet lovers with adoptable pets i
    ```
 5. Create a copy of the ```.env.example``` file and rename it to ```.env```.
 6. Generate an application key:
- ```
-  php artisan key:generate
- ```
+   ```
+   php artisan key:generate
+   ```
 5. Configure the database connection in the ```.env``` file with your database credentials.
 6. Run the database migrations:
    ```
@@ -43,7 +43,7 @@ FurryFriends is a web application that connects pet lovers with adoptable pets i
    ```
 7. Start the development server:
     ```
-   php artisan serve
+    php artisan serve
     ```
 
 Set up a database and update the ```.env``` file with your credentials before running the migrations.
