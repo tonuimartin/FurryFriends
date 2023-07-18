@@ -112,6 +112,18 @@ Route::get('/viewpetinformation',[PetController::class,'viewpetinformation']);
 Route::get('/auth/{provider}/redirect',[ProviderController::class,'redirect']);
  
 Route::get('/auth/{provider}/callback',[ProviderController::class,'callback']);
+
+Route::get('/addtocart/{pet}',[PetController::class, 'addtocart'])->name('addtocart');
+
+Route::get('cart', [PetController::class, 'cart'])->name('cart');
+
+Route::patch('/updatecart', [PetController::class, 'updatecart'])->name('updatecart');
+
+Route::delete('/removecart', [PetController::class, 'removecart'])->name('removecart');
+
+// Route::post('/email/{sourceapplicant}/verification-notification', [EmailVerificationNotificationController::class, 'accepted'])
+//                 ->middleware('throttle:6,1')
+//                 ->name('verification.accepted');
  
 //Route::get('/auth/google/redirect', function () {
  //  return Socialite::driver('google')->redirect();

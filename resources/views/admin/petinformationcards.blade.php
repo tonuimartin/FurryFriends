@@ -8,7 +8,7 @@
 	<div class="container py-4">
 		<h1 class="h1 text-center" id="pageHeaderTitle"> Pet Information </h1>
         @foreach ($petinformations as $petinformation)
-		<article class="postcard dark blue">
+		<article class="postcard light red">
 			<a class="postcard__img_link" href="#">
 				<img class="postcard__img" src="{{ $petinformation->pet_information_image ? asset('storage/' . $petinformation->pet_information_image) : asset('images/no-image.jpg') }}"alt="Pet Information Image" style="height: 230px;" />
 			</a>

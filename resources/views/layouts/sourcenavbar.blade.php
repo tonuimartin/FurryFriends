@@ -97,7 +97,7 @@
               </div>             
              </div>
 
-        </header>
+       
         @include('layouts.message')
     <!-- <div class="hero" style="background-image: url({{asset('imports/nav_bar/assets/images/hero_1.jpg')}});"></div> -->
   
@@ -108,5 +108,6 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.sticky.js"></script>
     <script src="js/main.js"></script>
+    </header>
   </body>
 </html>
