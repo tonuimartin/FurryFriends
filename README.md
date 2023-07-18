@@ -42,9 +42,9 @@ FurryFriends is a web application that connects pet lovers with adoptable pets i
    php artisan migrate
    ```
 7. Start the development server:
-    ```
-    php artisan serve
-    ```
+   ```
+   php artisan serve
+   ```
 
 Set up a database and update the ```.env``` file with your credentials before running the migrations.
 
