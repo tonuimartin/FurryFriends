@@ -48,7 +48,7 @@
 
                     <div class="wrap-input100 validate-input m-b-26" data-validate="Source Location is required">
 						<span class="label-input100">Source Location</span>
-						<input class="input100" type="text" name="location" placeholder="Enter Source Location" value="{{ old('location') }}">
+						<input class="input100" type="text" id="sourcelocation" name="location" placeholder="Enter Source Location" value="{{ old('location') }}">
 						<span class="focus-input100"></span>
 					</div>
 
@@ -184,6 +184,9 @@
 	<script src="imports/addpet/assets/vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 	<script src="imports/addpet/assets/js/main.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANjPez87bBOVMnOdY4d2v1a3wi0wmzCXE&libraries=places"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="{{asset('imports/maps/main.js')}}"></script>
 
 </body>
 </html>

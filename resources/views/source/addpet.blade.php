@@ -92,6 +92,7 @@
 						<span class="focus-input100"></span>
 					</div>
 
+					<input type="hidden" name="status" value="available">
 
                     <div class="wrap-input100 validate-input m-b-26" data-validate="Pet Description is required">
 						<label for="description" class="label-input100">Pet Description</label>

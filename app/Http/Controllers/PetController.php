@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Pet;
+use App\Models\Source;
 use App\Models\PetInformation;
 use App\Models\Confirmation;
 use Illuminate\Validation\Rule;
@@ -52,6 +53,7 @@ class PetController extends Controller
         'pet_type' => 'required',
         'description' => 'required',
         'price' => 'required',
+        'status'=>'required',
         
 
         ]);
@@ -70,7 +72,7 @@ class PetController extends Controller
 
     public function show()
     {
-        $pets = Pet::filter(request(['search']))->where('source_id', auth()->id())->get();
+        $pets = Pet::filter(request(['search']))->where('source_id', auth()->id())->where('status','available')->get();
         
         return view('source.allpets')
         ->with('pets', $pets);
@@ -163,6 +165,7 @@ class PetController extends Controller
                 "pet_name" => $pet->pet_name,
                 "pet_image" => $pet->pet_image,
                 "price" => $pet->price,
+                "source_id" => $pet->source_id,
                 "quantity" => 1
             ];
         }
@@ -197,6 +200,20 @@ class PetController extends Controller
             session()->flash('message', 'Pet successfully removed!');
         }
     }
+
+    public function maps(Request $request)
+       {
+       
+        $source_id = $request->query('source_id');
+        $pet_name = $request->query('pet_name');
+        $pet_id = $request->query('pet_id');
+        $location= Source::where('source_id', $source_id)->value('location');
+        $total = $request->query('total');
+        
+    
+           return view('maps.map', compact('location','total','source_id','pet_id'));
+           
+       }
        
 }
 

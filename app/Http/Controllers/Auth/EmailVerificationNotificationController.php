@@ -22,4 +22,13 @@ class EmailVerificationNotificationController extends Controller
 
         return back()->with('status', 'verification-link-sent');
     }
+
+    public function accepted($sourceapplicant): RedirectResponse
+    {
+        $source= Sourceapplicant::where('id', $sourceapplicant)->first();
+      
+        $source->sendEmailVerificationNotification();
+
+        return back()->with('status', 'verification-link-sent');
+    }
 }

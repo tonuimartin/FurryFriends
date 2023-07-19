@@ -34,7 +34,7 @@
 
             <header class="card-header">
               <a href="#" data-toggle="collapse" data-target="#collapse_1" aria-expanded="true" class="">
-                <i class="icon-control fa fa-chevron-down"></i>
+                <!-- <i class="icon-control fa fa-chevron-down"></i> -->
                 <h6 class="title">Pet Breed</h6>
               </a>
             </header>
@@ -50,7 +50,7 @@
 
             <header class="card-header">
               <a href="#" data-toggle="collapse" data-target="#collapse_2" aria-expanded="true" class="">
-                <i class="icon-control fa fa-chevron-down"></i>
+                <!-- <i class="icon-control fa fa-chevron-down"></i> -->
                 <h6 class="title">Pet Type</h6>
               </a>
             </header>
@@ -72,7 +72,7 @@
 
   <header class="card-header">
     <a href="#" data-toggle="collapse" data-target="#collapse_3" aria-expanded="true" class="">
-      <i class="icon-control fa fa-chevron-down"></i>
+      <!-- <i class="icon-control fa fa-chevron-down"></i> -->
       <h6 class="title">Pet Gender</h6>
     </a>
   </header>

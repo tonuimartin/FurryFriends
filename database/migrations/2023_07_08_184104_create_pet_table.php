@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('description');
             $table->string('pet_image');
             $table->decimal("price",6,2);
+            $table->string('status');
             $table->timestamps();
         });
     }

@@ -22,7 +22,8 @@ class Pet extends Model
         'source_id',
         'description',
         'pet_image',
-        'price'
+        'price',
+        'status'
     ];
 
     public function scopeFilter($query, array $filters)

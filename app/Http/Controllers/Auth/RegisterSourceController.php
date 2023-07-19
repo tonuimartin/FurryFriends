@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Sourceapplicant;
 use App\Models\Source;
+use App\Models\Order;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -27,6 +28,16 @@ class RegisterSourceController extends Controller
 
         $sourceapplicants= Sourceapplicant::all();
          return view('admin.sources',compact('sourceapplicants'));
+    }
+
+    public function showorders()
+    {
+        // if (auth()->user()->role != "owner") {
+        //     abort(403, 'Unauthorized Action! This page is for property owners only');
+        // }
+
+        $orders= Order::all();
+         return view('admin.orders',compact('orders'));
     }
 
     public function shown()

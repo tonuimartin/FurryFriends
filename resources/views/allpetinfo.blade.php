@@ -3,6 +3,6 @@
     <x-slot name="header">
     @include('layouts.navbar') 
        </x-slot>
-       @include('admin.petinformationcards')
+       @include('userpartials.petinfocards')
         
 </x-app-layout>

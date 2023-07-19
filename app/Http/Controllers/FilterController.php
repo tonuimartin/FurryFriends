@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Pet;
-
+use Carbon\Carbon;
 class FilterController extends Controller
 {
     public function index(Request $request){
@@ -15,8 +15,8 @@ class FilterController extends Controller
             abort(403, 'Unauthorized Action! This page is for users only');
          }
         
-        $pets=Pet::all();
-        $query= Pet::query();
+        $pets=Pet::all()->where('status','available');
+        $query= Pet::query()->where('status','available');
 
         if(isset($request->breed) && ($request->breed != null)) {
             $query->where ('breed',$request->breed);
@@ -62,5 +62,21 @@ class FilterController extends Controller
         $pets= $query->get(); 
         
         return view ('allpetsforadoption',compact('pets'));
+    }
+
+    public function chart(){
+$data=User::select('id','created_at')->get()->groupBy(function($data){
+return Carbon::parse($data->created_at)->format('M');
+
+});
+
+$months=[];
+$monthCount=[];
+
+foreach($data as $month => $values){
+$months[]=$month;
+$monthCount[]=count($values);
+}
+return view('maps.chart',['data' => $data,'months'=>$months,'monthCount'=>$monthCount]);
     }
 }

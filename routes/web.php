@@ -39,7 +39,7 @@ Route::get('/catsadoption', function () {
     return view('catsforadoption');
 });
 
-Route::get('/source_dashboard', [AuthenticatedSessionController::class, 'source_dashboard'])->middleware('auth');
+Route::get('/source_dashboard', [AuthenticatedSessionController::class, 'source_dashboard'])->middleware('auth','verified');
 
 
 Route::get('/registersource', [RegisterSourceController::class, 'create'])->name('registersource');
@@ -66,12 +66,17 @@ Route::get('/displaycards2', function () {
 Route::get('/admindashboard', function () {
     return view('admin\admindashboard');
 });
+Route::get('/maps', [PetController::class, 'maps']);
+Route::get('/chart', [FilterController::class, 'chart']);
 
 // Route::get('/basictable', function () {
 //     return view('admin\basictable');
 // });
 
 Route::get('/basictable', [RegisterSourceController::class, 'show']);
+
+Route::get('/showorders', [RegisterSourceController::class, 'showorders']);
+
 
 Route::get('/approvedpetsources', [RegisterSourceController::class, 'shown']);
 
@@ -81,11 +86,7 @@ Route::delete('/source/{sourceapplicant}/deny',[RegisterSourceController::class,
 
 Route::delete('/source/{source}/delete',[RegisterSourceController::class,'delete']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::get('/dashboard', [AuthenticatedSessionController::class, 'dashboard'])->middleware('auth');
+Route::get('/dashboard', [AuthenticatedSessionController::class, 'dashboard'])->middleware('auth','verified');
 
 Route::get('/addpets', [PetController::class, 'create'])->middleware('auth');
 Route::post('/addedpet', [PetController::class, 'store'])->middleware('auth');
@@ -119,11 +120,16 @@ Route::get('cart', [PetController::class, 'cart'])->name('cart');
 
 Route::patch('/updatecart', [PetController::class, 'updatecart'])->name('updatecart');
 
+Route::get('/mpesapayment', function () {
+    return view('admin\mpesapayment');
+});
+
 Route::delete('/removecart', [PetController::class, 'removecart'])->name('removecart');
 
-// Route::post('/email/{sourceapplicant}/verification-notification', [EmailVerificationNotificationController::class, 'accepted'])
-//                 ->middleware('throttle:6,1')
-//                 ->name('verification.accepted');
+
+
+ Route::post('/email/{sourceapplicant}/verification-notification', [EmailVerificationNotificationController::class, 'accepted'])
+                 ->middleware('throttle:6,1');
  
 //Route::get('/auth/google/redirect', function () {
  //  return Socialite::driver('google')->redirect();
