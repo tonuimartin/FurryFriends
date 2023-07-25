@@ -27,12 +27,12 @@ FurryFriends is a web application that connects pet lovers with adoptable pets i
    ```
    git clone https://github.com/your-username/FurryFriends.git
    ```
-3. Install the project dependencies:
+2. Install the project dependencies:
    ```
    composer install
    ```
-5. Create a copy of the ```.env.example``` file and rename it to ```.env```.
-6. Generate an application key:
+3. Create a copy of the ```.env.example``` file and rename it to ```.env```.
+4. Generate an application key:
    ```
    php artisan key:generate
    ```
@@ -42,9 +42,9 @@ FurryFriends is a web application that connects pet lovers with adoptable pets i
    php artisan migrate
    ```
 7. Start the development server:
-    ```
-    php artisan serve
-    ```
+   ```
+   php artisan serve
+   ```
 
 Set up a database and update the ```.env``` file with your credentials before running the migrations.
 
